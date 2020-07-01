@@ -1,6 +1,5 @@
 # BeaverRecon
 This project is unfinished but this will eventually be updated.
-If you want to contribute to the project please dm me on instagram @catlinux
 
 Current Version: 0.6
 
