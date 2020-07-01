@@ -1,0 +1,10 @@
+Version: 0.4
+Added option to change theme color in settings
+
+Version: 0.5
+changed settings menu so api keys can be updated
+
+Verson: 0.6
+changed ui to be more efficient when getting information
+added haveibeenpwned lookup (stolen key xD)
+minor bug fixes and improvements
