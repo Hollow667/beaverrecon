@@ -56,7 +56,7 @@ def banner(themec):
 |      <|  -__|  __|  _  |     |
 |___|__||_____|____|_____|__|__|
 
- Made By @{reset}catlinux{themec} on instagram <3
+ Made By {reset}catlinux{themec} with love <3
 {reset}
  ____________________
 | {themec}Version{reset}: 0.6       |
