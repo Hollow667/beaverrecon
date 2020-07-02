@@ -16,7 +16,9 @@ pip3 install requests bs4 emailrep
 thats about it lol
 
 ## Running
-```python3 main.py```
+```
+python3 BeaverRecon.py
+```
 pretty self explanatory 
 
 ## About
