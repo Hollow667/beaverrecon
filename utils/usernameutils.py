@@ -193,33 +193,36 @@ def checkbreaches(email): # this function is here just in case the one below doe
 
 def haveibeenpwned(email):
     finalinfo = []
-    headers = {"hibp-api-key": "5215f26585ad410eb375df67a94c6058"} # stole this key off some random site
-    leakedreq = requests.get(f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}?truncateResponse=true", headers=headers)
-    pastesreq = requests.get(f"https://haveibeenpwned.com/api/v3/pasteaccount/{email}", headers=headers)
+    try:
+        headers = {"hibp-api-key": "da0f1fc9a24a4a5c81dcf09bb7f195f3"} # stole this key off some random site
+        leakedreq = requests.get(f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}?truncateResponse=true", headers=headers)
+        pastesreq = requests.get(f"https://haveibeenpwned.com/api/v3/pasteaccount/{email}", headers=headers)
 
-    if leakedreq.status_code == 404:
-        finalinfo.append("No Leaks Found")
-    else:
-        finalinfo.append(f"[{themecolor}+{reset}] {bold}Leaks{reset} [{themecolor}+{reset}]")
-        leakedjson = json.loads(leakedreq.text)
+        if leakedreq.status_code == 404:
+            finalinfo.append("No Leaks Found")
+        else:
+            finalinfo.append(f"[{themecolor}+{reset}] {bold}Leaks{reset} [{themecolor}+{reset}]")
+            leakedjson = json.loads(leakedreq.text)
 
-        for leakdic in leakedjson:
-            for leak in leakdic:
-                finalinfo.append(f"{bold}{leakdic[leak]}{reset}")
-                pass
+            for leakdic in leakedjson:
+                for leak in leakdic:
+                    finalinfo.append(f"{bold}{leakdic[leak]}{reset}")
+                    pass
 
-    if pastesreq.status_code == 404:
-        finalinfo.append("\nNo Pastes Found")
-    else:
-        finalinfo.append(f"\n[{themecolor}+{reset}] {bold}Pastes{reset} [{themecolor}+{reset}]")
-        pastesjson = json.loads(pastesreq.text)
+        if pastesreq.status_code == 404:
+            finalinfo.append("\nNo Pastes Found")
+        else:
+            finalinfo.append(f"\n[{themecolor}+{reset}] {bold}Pastes{reset} [{themecolor}+{reset}]")
+            pastesjson = json.loads(pastesreq.text)
 
-        for pastedic in pastesjson:
-            for x in pastedic:
-                if x == "Id":
-                    if "http" in pastedic[x]:
-                        finalinfo.append(f"{bold}{pastedic[x]}{reset}")
-                        pass
-                    else:
-                        finalinfo.append(f"{bold}http://pastebin.com/{pastedic[x]}{reset}")
-    return finalinfo
+            for pastedic in pastesjson:
+                for x in pastedic:
+                    if x == "Id":
+                        if "http" in pastedic[x]:
+                            finalinfo.append(f"{bold}{pastedic[x]}{reset}")
+                            pass
+                        else:
+                            finalinfo.append(f"{bold}http://pastebin.com/{pastedic[x]}{reset}")
+        return finalinfo
+    except:
+        finalinfo.append("No Results Found :(")
