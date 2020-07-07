@@ -54,7 +54,7 @@ def mainloop(themec):
                     while True:
                         cls()
                         for x in target:
-                            currenttarget = x
+                            currenttarget = x.lstrip().rstrip()
                         ipmenu(themec, currenttarget)
                         option = input(f"{reset}{bold}Option:{reset}{themec} ")
 
@@ -109,7 +109,7 @@ def mainloop(themec):
                 while True:
                     cls()
                     for x in target:
-                        currenttarget = x
+                        currenttarget = x.lstrip().rstrip()
                     usernamemenu(themec, currenttarget)
                     option = input(f"{reset}{bold}Option:{reset}{themec} ")
 
@@ -147,7 +147,7 @@ def mainloop(themec):
                 while True:
                     cls()
                     for x in target:
-                        currenttarget = x
+                        currenttarget = x.lstrip().rstrip()
                     emailmenu(themec, currenttarget)
                     option = input(f"{reset}{bold}Option:{reset}{themec} ")
 
