@@ -4,12 +4,13 @@ from utils.iputils import *
 from utils.usernameutils import *
 from utils.banners import *
 from utils.settings import *
+from utils.phoneutils import *
 from time import sleep
 from random import choice
 import sys
 
 ## Version
-VERSION = "0.6"
+VERSION = "0.7"
 
 def cls():
     if sys.platform == 'win32':
@@ -187,8 +188,19 @@ def mainloop(themec):
 
                     else: 
                         continue
-                        
+            
             elif option == "4":
+                cls()
+                print("Format: 1231231234")
+                phone = input(f"{reset}{bold}Phone:{reset}{themec} ").lstrip()
+                cls()
+                print (f"{reset}{green}{icon}{reset} {blue} Phone Scrape {green}{icon}{reset}")
+
+                for x in reversephone(phone):
+                    print(x)
+                input(f"{reset}{bold}\npress enter to go back:{themec} ")
+                continue
+            elif option == "5":
                 cls()
                 hash = input(f"{reset}{bold}Hash:{reset}{themec} ")
                 cls()
@@ -198,14 +210,14 @@ def mainloop(themec):
                 input(f"{reset}{bold}\npress enter to go back:{themec} ")
                 continue
 
-            elif option == "5":
+            elif option == "6":
                 cls()
                 print (f"{reset}{green}{icon}{reset} {blue} Tool Info {green}{icon}{reset}\n")
                 print(f'{themec}Coded By:{reset} CatLinux\n{themec}Info:{reset} Tool Made For Reversing Info Quicker For OSINT Uses \n{themec}Sites Used:{reset} Instagram.com, syclla.sh, ip-api.com, thatsthem.com, emailrep.io, hashes.org, haveibeenpwned.com\n{themec}Version:{reset} {VERSION}')
                 input(f"{bold}\npress enter to go back:{reset}{themec} ")
                 continue
             
-            elif option == "6":
+            elif option == "7":
                 while True:
                     cls()
                     settingsmenu(themec)
