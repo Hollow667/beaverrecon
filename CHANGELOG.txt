@@ -8,3 +8,6 @@ Verson: 0.6
 changed ui to be more efficient when getting information
 added haveibeenpwned lookup (stolen key xD)
 minor bug fixes and improvements
+
+Version: 0.7
+Added Reverse Phone Number Lookup
