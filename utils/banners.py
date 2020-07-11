@@ -19,7 +19,7 @@ def usernamemenu(themec, target):
 | {themec}1{reset} | {themec}scylla{reset}        |
 | {themec}2{reset} | {themec}instagram{reset}     |
 | {themec}3{reset} | {themec}change target{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}       |
+| {themec}0{reset} | {themec}Go Back{reset}        |
 |___|_______________|
     ''')
 
@@ -56,17 +56,18 @@ def banner(themec):
 |      <|  -__|  __|  _  |     |
 |___|__||_____|____|_____|__|__|
 
- Made By {reset}catlinux{themec} with love <3
+ Made By @{reset}catlinux{themec} on instagram <3
 {reset}
  ____________________
-| {themec}Version{reset}: 0.6       |
+| {themec}Version{reset}: 0.7       |
 |____________________|
 | {themec}1{reset} | {themec}IP{reset}             |
 | {themec}2{reset} | {themec}Username{reset}       |
 | {themec}3{reset} | {themec}Email{reset}          |
-| {themec}4{reset} | {themec}Hash Decrypt{reset}   |
-| {themec}5{reset} | {themec}Info{reset}           |
-| {themec}6{reset} | {themec}Settings{reset}       |
+| {themec}4{reset} | {themec}Phone{reset}          |
+| {themec}5{reset} | {themec}Hash Decrypt{reset}   |
+| {themec}6{reset} | {themec}Info{reset}           |
+| {themec}7{reset} | {themec}Settings{reset}       |
 | {themec}0{reset} | {themec}Exit{reset}           |
 |___|________________|
 ''' + reset)
