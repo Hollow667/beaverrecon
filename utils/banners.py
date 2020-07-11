@@ -19,7 +19,7 @@ def usernamemenu(themec, target):
 | {themec}1{reset} | {themec}scylla{reset}        |
 | {themec}2{reset} | {themec}instagram{reset}     |
 | {themec}3{reset} | {themec}change target{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}        |
+| {themec}0{reset} | {themec}Go Back{reset}       |
 |___|_______________|
     ''')
 
