@@ -163,7 +163,6 @@ def emailrep(email):
             emailinfo.append(emailrep)
     return emailinfo
 
-
 def checkbreaches(email): # this function is here just in case the one below doesnt work anymore
     datalist = []
     try:
@@ -198,8 +197,14 @@ def haveibeenpwned(email):
         leakedreq = requests.get(f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}?truncateResponse=true", headers=headers)
         pastesreq = requests.get(f"https://haveibeenpwned.com/api/v3/pasteaccount/{email}", headers=headers)
 
+
+
         if leakedreq.status_code == 404:
             finalinfo.append("No Leaks Found")
+            return finalinfo
+        elif leakedreq.status_code == 401:
+            finalinfo.append("Api is down :(")
+            return finalinfo
         else:
             finalinfo.append(f"[{themecolor}+{reset}] {bold}Leaks{reset} [{themecolor}+{reset}]")
             leakedjson = json.loads(leakedreq.text)
