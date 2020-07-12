@@ -46,65 +46,28 @@ def igpartialemail(username):
 
     return yee
 
-def scyllalookup(query, lookup): # Password, User, PassHash, PassSalt, Email, IP, UserId, Name, Domain 
-    if query == "Password" or "PassHash" or "PassSalt":
-        pass
-    else:
-        lookup = lookup.lower()
-    try:
-        info = []
+def scylla(typelookup, query):
+        finalinfo = []
+        headers = {'Accept': 'application/json'}
+        url = f"https://scylla.sh/search?q={typelookup}:{query}"
+        r = requests.get(url, verify=False, headers=headers)
+        jsn = r.json()
+        for key in jsn:
+            for x in key:
+                if x == "_source":
+                    info = key[x]
+                    for i in list(info)[-1].split("\n"):
+                        info[i] = f"{info[i]}\n"
 
-        emails = []
-        passwords = []
-        users = []
-        pwdhshs = []
-        pwdslts = []
-        ips = []
-        userids = []
-        names = []
-        breaches = []
+                    if info[typelookup] != query:
+                        pass
+                    else:
+                        for z in info:
+                            finalinfo.append(f"{themecolor}{z}{reset}: {info[z]}")
 
-        headers = {'Accept': 'application/json', 'Authorization': 'Basic c2FtbXk6QmFzaWNQYXNzd29yZCE='}
-        url = f"https://scylla.sh/search?q={query}:{lookup}"
-        r = requests.get(url, headers=headers, verify=False, )
-        json = r.json()
-        readablejson = json.dumps(json.loads(str(r.text)),sort_keys=True, indent=4, separators=('', ':'))
-
-        num = 0
-        while True:
-            try:
-                out = json[num]["_source"]
-                if str(lookup) in json.dumps(out).lower():
-                    try: email = out["Email"]; emails.append(f'{themecolor}Email{reset}: {email}{reset}\n')
-                    except KeyError: emails.append(""); pass
-                    try: password = out["Password"]; passwords.append(f'{themecolor}Password{reset}: {password}{reset}\n')
-                    except KeyError: passwords.append(""); pass
-                    try: user = out["User"]; users.append(f'{themecolor}User{reset}: {user}{reset}\n')
-                    except KeyError: users.append(""); pass
-                    try: passhash = out["PassHash"]; pwdhshs.append(f'{themecolor}Password Hash{reset}: {passhash}{reset}\n')
-                    except KeyError: pwdhshs.append(""); pass
-                    try: passalt = out["PassSalt"]; pwdslts.append(f'{themecolor}Password{reset}: {passalt}{reset}\n')
-                    except KeyError: pwdslts.append(""); pass
-                    try: ip = out["IP"]; ips.append(f'{themecolor}IP{reset}: {ip}{reset}\n')
-                    except KeyError: ips.append(""); pass
-                    try: userid = out["UserId"]; userids.append(f'{themecolor}User ID{reset}: {userid}{reset}\n')
-                    except KeyError: userids.append(""); pass
-                    try: name = out["Name"]; names.append(f'{themecolor}Name{reset}: {name}{reset}\n')
-                    except KeyError: names.append(""); pass
-                    try: breach = out["Domain"]; breaches.append(f'{themecolor}Breach{reset}: {breach}{reset}\n')
-                    except KeyError: breaches.append(""); pass
-                num += 1 
-            except:
-                pass
-                break 
-    except: 
-        pass
-    for email, password, user, passhash, passalt, ip, userid, name, breach in zip(emails, passwords, users, pwdhshs, pwdslts, ips, userids, names, breaches):
-        info.append(email + password + user + passhash + passalt + ip + userid + name + breach)
-    if bool(info) == False:
-        info.append("No Results Found :(")
-    
-    return info
+        if bool(finalinfo) == False:
+            finalinfo.append("No Results Found :(\n")
+        return finalinfo
 
 def hashcheck(hash):
     checked = []
