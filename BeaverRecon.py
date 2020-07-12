@@ -117,9 +117,9 @@ def mainloop(themec):
                     if option == "1":
                         cls()
                         print (f"{reset}{green}{icon}{reset} {blue} Scylla Lookup {green}{icon}{reset}")
-                        for x in scyllalookup("User", currenttarget):
+                        for x in scylla("User", currenttarget):
                             print (x)
-                        input(f"\n{reset}{bold}\npress enter to go back:{reset}{themec} ")
+                        input(f"{reset}{bold}press enter to go back:{reset}{themec} ")
                         continue
 
                     elif option == "2":
@@ -163,9 +163,9 @@ def mainloop(themec):
                     elif option == "2":
                         cls()
                         print (f"{reset}{green}{icon}{reset} {blue} Scylla Lookup {green}{icon}{reset}")
-                        for x in scyllalookup("Email", currenttarget):
+                        for x in scylla("Email", currenttarget):
                             print (x)
-                        input(f"\n{reset}{bold}press enter to go back: {themec}")
+                        input(f"{reset}{bold}press enter to go back: {themec}")
                         continue
 
                     elif option == "3":
