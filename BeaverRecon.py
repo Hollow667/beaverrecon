@@ -30,7 +30,7 @@ def mainloop(themec):
             icons = ['ツ', '卐', '✦', '☣']
             icon = choice(icons)
             cls()
-            print(banner(themec))
+            print(banner(themec, VERSION))
             option = input(f"{reset}{bold}Option:{reset}{themec} ")
             if option.isnumeric():
                 pass
