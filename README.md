@@ -20,6 +20,7 @@ PS: you need winrar installed for this other wise you can just do this manually
 Download the latest python version from here: https://www.python.org/
 make sure to add python to path
 then run this
+
 ```
 curl https://codeload.github.com/cat-linux/beaverrecon/zip/master -O -J -L
 set path="C:\Program Files\WinRAR\";%path%
