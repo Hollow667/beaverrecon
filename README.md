@@ -15,12 +15,17 @@ python3 BeaverRecon.py
 ```
 
 ### Windows
+PS: you need winrar installed for this other wise you can just do this manually
+
+Download the latest python version from here: https://www.python.org/
+make sure to add python to path
+then run this
 ```
-curl -O https://codeload.github.com/cat-linux/beaverrecon/zip/master
+curl https://codeload.github.com/cat-linux/beaverrecon/zip/master -O -J -L
 set path="C:\Program Files\WinRAR\";%path%
 winrar x beaverrecon-master.zip
 cd beaverrecon-master
-python -m pip install requests emailrep phonenumbers
+python -m pip install -r requirements.txt
 ```
 
 
