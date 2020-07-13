@@ -21,7 +21,7 @@ Download the latest python version from here: https://www.python.org/
 
 make sure to add python to path
 
-then run this
+then run this in cmd or powershell
 
 ```
 curl https://codeload.github.com/cat-linux/beaverrecon/zip/master -O -J -L
