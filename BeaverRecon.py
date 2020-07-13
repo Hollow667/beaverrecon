@@ -1,7 +1,7 @@
 from os import system
 from utils.colors import *
 from utils.iputils import *
-from utils.usernameutils import *
+from utils.mainutils import *
 from utils.banners import *
 from utils.settings import *
 from utils.phoneutils import *
@@ -106,6 +106,11 @@ def mainloop(themec):
                 target = []
                 cls()
                 username = input(f"{reset}{bold}Username:{reset}{themec} ")
+                if username == "":
+                    cls()
+                    print("Please Enter A Username...")
+                    sleep(2)
+                    continue
                 target.append(username)
                 while True:
                     cls()
@@ -126,7 +131,7 @@ def mainloop(themec):
                         cls()
                         print (f"{reset}{green}{icon}{reset} {blue} Instagram Lookup {green}{icon}{reset}")
                         print(igpartialemail(currenttarget))
-                        input(f"\n{reset}{bold}\npress enter to go back:{reset}{themec} ")
+                        input(f"\n{reset}{bold}press enter to go back:{reset}{themec} ")
                         continue
 
                     elif option == "3":
@@ -144,6 +149,17 @@ def mainloop(themec):
                 target = []
                 cls()
                 email = input(f"{reset}{bold}Email:{reset}{themec} ")
+                if email == "":
+                    cls()
+                    print("Please Enter A Email...")
+                    sleep(2)
+                    continue
+                if "@" in email:
+                    pass
+                else:
+                    cls()
+                    print("Please Enter A Email...")
+                    sleep(2)
                 target.append(email)
                 while True:
                     cls()
@@ -170,13 +186,20 @@ def mainloop(themec):
 
                     elif option == "3":
                         cls()
+                        print (f"{reset}{green}{icon}{reset} {blue} Pwndb2 Lookup {green}{icon}{reset}")
+                        for x in pwndb2(currenttarget):
+                            print (x)
+                        input(f"{reset}{bold}press enter to go back: {themec}")
+                        continue
+                    elif option == "4":
+                        cls()
                         print (f"{reset}{green}{icon}{reset} {blue} HIBP Lookup {green}{icon}{reset}")
                         for x in haveibeenpwned(currenttarget):
                             print(x)
                         input(f"{reset}{bold}\npress enter to go back:{reset}{themec} ")
                         continue
 
-                    elif option == "4":
+                    elif option == "5":
                         cls()
                         changetarget = input(f"{reset}{bold}Target:{reset}{themec} ")
                         target.clear()
@@ -191,8 +214,15 @@ def mainloop(themec):
             
             elif option == "4":
                 cls()
-                print("Format: 1231231234")
+                print("Format: 1231231234\nFYI: This Only Works on US Numbers")
                 phone = input(f"{reset}{bold}Phone:{reset}{themec} ").lstrip()
+                if phone.isnumeric():
+                    pass
+                else:
+                    cls()
+                    print("Please Enter A Valid Phone Number...")
+                    sleep(2)
+                    continue
                 cls()
                 print (f"{reset}{green}{icon}{reset} {blue} Phone Scrape {green}{icon}{reset}")
 
@@ -200,9 +230,15 @@ def mainloop(themec):
                     print(x)
                 input(f"{reset}{bold}\npress enter to go back:{themec} ")
                 continue
+
             elif option == "5":
                 cls()
                 hash = input(f"{reset}{bold}Hash:{reset}{themec} ")
+                if hash == "":
+                    cls()
+                    print("Please Enter A Hash...")
+                    sleep(2)
+                    continue
                 cls()
                 print (f"{reset}{green}{icon}{reset} {blue} Hash Decrypt(hashes.org) {green}{icon}{reset}")
                 for x in hashcheck(hash):
