@@ -14,3 +14,6 @@ Added Reverse Phone Number Lookup
 Updated UI
 Bug Fixes
 Update Check In Settings
+
+Version: 0.7.1
+removed broken colors from color menu
