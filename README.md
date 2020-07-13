@@ -18,7 +18,9 @@ python3 BeaverRecon.py
 PS: you need winrar installed for this other wise you can just do this manually
 
 Download the latest python version from here: https://www.python.org/
+
 make sure to add python to path
+
 then run this
 
 ```
