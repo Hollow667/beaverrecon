@@ -26,9 +26,7 @@ then run this in cmd or powershell
 ```
 curl https://codeload.github.com/cat-linux/beaverrecon/zip/master -O -J -L
 set path="C:\Program Files\WinRAR\";%path%
-winrar x beaverrecon-master.zip
-timeout 5
-cd beaverrecon-master
+winrar x beaverrecon-master.zip && cd beaverrecon-master
 python -m pip install -r requirements.txt --user
 python BeaverRecon.py
 ```
