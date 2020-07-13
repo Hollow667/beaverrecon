@@ -67,22 +67,6 @@ def colortocode(color):
         bannercolor = bold + pink
     elif color == "lightcyan":
         bannercolor = bold + lightcyan
-    elif color == "bgblack":
-        bannercolor = bold + bgblack
-    elif color == "bgred":
-        bannercolor = bold + bgred
-    elif color == "bggreen":
-        bannercolor = bold + bggreen
-    elif color == "bgorange":
-        bannercolor = bold + bgorange
-    elif color == "bgblue":
-        bannercolor = bold + bgblue
-    elif color == "bgpurple":
-        bannercolor = bold + bgpurple
-    elif color == "bgcyan":
-        bannercolor = bold + bgcyan
-    elif color == "bglightgrey":
-        bannercolor = bold + bglightgrey
     else:
         bannercolor = bold + blue
     return bannercolor
@@ -93,21 +77,14 @@ def colormenu():
  __________________________
 |    color selection       |
 |__________________________|
-| {black}black{reset}      | {bgblack}bgblack{reset}     |
-| {red}red{reset}        | {bgred}bgred{reset}       |
-| {green}green{reset}      | {bggreen}bggreen{reset}     |
-| {orange}orange{reset}     | {bgorange}bgorange{reset}    |
-| {blue}blue{reset}       | {bgblue}bgblue{reset}      |
-| {purple}purple{reset}     | {bgpurple}bgpurple{reset}    |
-| {cyan}cyan{reset}       | {bgcyan}bgcyan{reset}      |
-| {lightgrey}lightgrey{reset}  | {bglightgrey}bglightgrey{reset} |
-| {darkgrey}darkgrey{reset}   |_____________| 
-| {lightred}lightred{reset}   |
-| {lightgreen}lightgreen{reset} |
-| {yellow}yellow{reset}     |
-| {lightblue}lightblue{reset}  |
-| {pink}pink{reset}       |
-| {lightcyan}lightcyan{reset}  |
+| {black}black{reset}      | {darkgrey}darkgrey{reset}    |
+| {red}red{reset}        | {lightred}lightred{reset}    |
+| {green}green{reset}      | {lightgreen}lightgreen{reset}  |
+| {orange}orange{reset}     | {yellow}yellow{reset}      |
+| {blue}blue{reset}       | {lightblue}lightblue{reset}   |
+| {purple}purple{reset}     | {pink}pink{reset}        |
+| {cyan}cyan{reset}       |  {lightcyan}lightcyan{reset}  |
+| {lightgrey}lightgrey{reset}  |_____________|
 |____________|
 ''')
 
