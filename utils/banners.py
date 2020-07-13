@@ -40,9 +40,10 @@ def emailmenu(themec, target):
 def settingsmenu(themec):
     print(f'''{reset}
  _____________________
-| {themec}1{reset} | {themec}Color Menu{reset}      |
-| {themec}2{reset} | {themec}Update Api Keys{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}         |
+| {themec}1{reset} | {themec}Color Menu{reset}       |
+| {themec}2{reset} | {themec}Update Api Keys{reset}  |
+| {themec}3{reset} | {themec}Check For Update{reset} |
+| {themec}0{reset} | {themec}Go Back{reset}          |
 |___|_________________|
     ''')
 
