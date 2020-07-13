@@ -1,0 +1,4 @@
+emailrep
+bs4
+phonenumbers
+requests
