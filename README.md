@@ -9,13 +9,13 @@ The tool runs on windows and linux
 ```git clone https://github.com/Cat-Linux/BeaverRecon.git```
 
 ## Requirements and Prerequisites
-###Linux
+### Linux
 ```
 sudo apt install python3 python3-pip
 pip3 install requests bs4 emailrep phonenumbers
 ```
 
-###Windows
+### Windows
 ```
 
 
