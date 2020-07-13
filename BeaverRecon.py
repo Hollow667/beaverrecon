@@ -5,6 +5,7 @@ from utils.mainutils import *
 from utils.banners import *
 from utils.settings import *
 from utils.phoneutils import *
+from utils.update import *
 from time import sleep
 from random import choice
 import sys
@@ -307,6 +308,21 @@ def mainloop(themec):
                                 break
                             else:
                                 continue
+
+                    elif option == "3":
+                        print("Checking For Update...")
+                        sleep(2)
+                        check = checkversion(VERSION)
+                        print(check)
+                        if "Update" in check:
+                            option = input("Would You Like To Update?(y/n): ")
+                            if option.lower() == 'y':
+                                print("Updating...")
+                                sleep(2)
+                                update()
+                            else:
+                                continue
+                        sleep(2)
 
                     elif option == "0":
                         break
