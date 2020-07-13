@@ -11,3 +11,5 @@ minor bug fixes and improvements
 
 Version: 0.7
 Added Reverse Phone Number Lookup
+Updated UI
+Bug Fixes
