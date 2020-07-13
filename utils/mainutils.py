@@ -52,6 +52,9 @@ def scylla(typelookup, query):
         headers = {'Accept': 'application/json'}
         url = f"https://scylla.sh/search?q={typelookup}:{query}"
         r = requests.get(url, verify=False, headers=headers)
+        if r.status_code != 200:
+            finalinfo.append("scylla.sh is down :(\n")
+            return finalinfo
         jsn = r.json()
         for key in jsn:
             for x in key:
@@ -69,7 +72,7 @@ def scylla(typelookup, query):
         if bool(finalinfo) == False:
             finalinfo.append("No Results Found :(\n")
         return finalinfo
-        
+
     except Exception as e:
         finalinfo.append("Lookup Failed!")
         finalinfo.append(f"Error: {str(e)}\n")
@@ -200,3 +203,36 @@ def haveibeenpwned(email):
         return finalinfo
     except:
         finalinfo.append("No Results Found :(")
+
+def pwndb2(email):
+    finalinfo = []
+    try:
+        email = email.split("@")
+        url = "https://pwndb2am4tzkvold.onion.ws/"
+        data = f"luser={email[0]}&domain={email[1]}&luseropr=0&domainopr=0&submitform=em"
+        headers = {'Host': 'pwndb2am4tzkvold.onion.ws','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0'}
+        r = requests.post(url, data=data, allow_redirects=True, headers=headers)
+        soup = BeautifulSoup(r.text, 'html.parser')
+        if "1\nArray" not in str(soup):
+            finalinfo.append("No Results Found :(\n")
+            return finalinfo
+        else:
+            info = str(soup.find("pre")).split("1\nArray", 1)[-1]
+            for line in info.split("\n"):
+                line = line.rstrip().lstrip()
+                if "=&gt" not in line: pass
+                else:
+                    line = line.replace("=&gt;", ':').split(":")
+                    line[0] = line[0].strip("[").strip("] ")
+                    line[1] = line[1].strip(" ")
+                    if line[0] == "id":
+                        pass
+                    if line[0] == "password":
+                        line[1] = f'{line[1]}\n'
+                    finalinfo.append(f"{line[0]}: {line[1]}")
+        return finalinfo
+
+    except Exception as e:
+        finalinfo.append("Lookup Failed!")
+        finalinfo.append(f"Error: {str(e)}\n")
+        return finalinfo
