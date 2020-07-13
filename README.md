@@ -9,11 +9,15 @@ The tool runs on windows and linux
 ```git clone https://github.com/Cat-Linux/BeaverRecon.git```
 
 ## Requirements and Prerequisites
+###Linux
 ```
 sudo apt install python3 python3-pip
 pip3 install requests bs4 emailrep phonenumbers
 ```
-thats about it lol
+
+###Windows
+```
+
 
 ## Running
 ```
@@ -38,5 +42,4 @@ BeaverRecon is OSINT/doxing tool that scrapes sites for information
 - ✅ - https://emailrep.io/
 - ✅ - http://hashes.org/
 - ✅ - http://haveibeenpwned.com/
-- ⚠️ - http://ghostproject.fr/
-- ⚠️ - http://weleakinfo.to/
+- ✅ - https://pwndb2am4tzkvold.onion.ws
