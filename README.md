@@ -16,7 +16,11 @@ python3 BeaverRecon.py
 
 ### Windows
 ```
-
+curl -O https://codeload.github.com/cat-linux/beaverrecon/zip/master
+set path="C:\Program Files\WinRAR\";%path%
+winrar x beaverrecon-master.zip
+cd beaverrecon-master
+python -m pip install requests emailrep phonenumbers
 ```
 
 
