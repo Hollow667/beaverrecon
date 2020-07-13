@@ -4,34 +4,35 @@ from utils.settings import *
 def ipmenu(themec, target):
     print(f'''{reset}
 {bold}Current Target: {themec}{target}{reset}
- ___________________
-| {themec}1{reset} | {themec}geoip{reset}         |
-| {themec}2{reset} | {themec}thatsthem{reset}     |
-| {themec}3{reset} | {themec}change target{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}       |
+ _____________________________________________
+| {themec}1{reset} | {bold}GeoIP{reset}         | {themec}Geo Locate A I.P.{reset}       |
+| {themec}2{reset} | {bold}ThatsThem{reset}     | {themec}Lookup On ThatsThem.com{reset} |
+| {themec}3{reset} | {bold}Change Target{reset} | {themec}Change Current Target{reset}   |
+| {themec}0{reset} | {bold}Go Back{reset}       |_________________________|
 |___|_______________|
     ''')
 
 def usernamemenu(themec, target):
     print(f'''{reset}
 {bold}Current Target: {themec}{target}{reset}
- ___________________    
-| {themec}1{reset} | {themec}scylla{reset}        |
-| {themec}2{reset} | {themec}instagram{reset}     |
-| {themec}3{reset} | {themec}change target{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}       |
+ ________________________________________________________________________
+| {themec}1{reset} | {bold}scylla{reset}        | {themec}Data Breach Lookup(Shows Leaked Info){reset}              |
+| {themec}2{reset} | {bold}instagram{reset}     | {themec}Get The Partial Email or Phone On A Instagram User{reset} |
+| {themec}3{reset} | {bold}change target{reset} | {themec}Change Current Target{reset}                              |
+| {themec}0{reset} | {bold}Go Back{reset}       |____________________________________________________|
 |___|_______________|
     ''')
 
 def emailmenu(themec, target):
     print(f'''{reset}
 {bold}Current Target: {themec}{target}{reset}
- ___________________    
-| {themec}1{reset} | {themec}emailrep{reset}      |
-| {themec}2{reset} | {themec}scylla{reset}        |
-| {themec}3{reset} | {themec}hibp{reset}          |
-| {themec}4{reset} | {themec}change target{reset} |
-| {themec}0{reset} | {themec}Go Back{reset}       |
+ ___________________________________________________________
+| {themec}1{reset} | {bold}EmailRep{reset}      | {themec}Email Reputation Lookup{reset}               |
+| {themec}2{reset} | {bold}Scylla{reset}        | {themec}Data Breach Lookup(shows leaked info){reset} |
+| {themec}3{reset} | {bold}Pwndb2{reset}        | {themec}Data Breach Lookup(shows leaked info){reset} |
+| {themec}4{reset} | {bold}HIBP{reset}          | {themec}Data Breach Lookup(only shows leaks){reset}  |
+| {themec}5{reset} | {bold}Change Target{reset} | {themec}Change Current Target{reset}                 |
+| {themec}0{reset} | {bold}Go Back{reset}       |_______________________________________|
 |___|_______________|
     ''')
 
@@ -94,5 +95,4 @@ def colormenu():
 | {lightcyan}lightcyan{reset}  |
 |____________|
 ''')
-
 
