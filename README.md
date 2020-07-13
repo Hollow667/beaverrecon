@@ -1,7 +1,7 @@
 # BeaverRecon
 This project is unfinished but this will eventually be updated.
 
-Current Version: 0.7
+Current Version: 0.7.1
 
 ## Installing
 The tool runs on windows and linux 
