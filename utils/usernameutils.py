@@ -47,7 +47,8 @@ def igpartialemail(username):
     return yee
 
 def scylla(typelookup, query):
-        finalinfo = []
+    finalinfo = []
+    try:
         headers = {'Accept': 'application/json'}
         url = f"https://scylla.sh/search?q={typelookup}:{query}"
         r = requests.get(url, verify=False, headers=headers)
@@ -67,6 +68,11 @@ def scylla(typelookup, query):
 
         if bool(finalinfo) == False:
             finalinfo.append("No Results Found :(\n")
+        return finalinfo
+        
+    except Exception as e:
+        finalinfo.append("Lookup Failed!")
+        finalinfo.append(f"Error: {str(e)}\n")
         return finalinfo
 
 def hashcheck(hash):
