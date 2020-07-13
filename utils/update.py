@@ -3,12 +3,12 @@ import requests
 from os import system
 
 def downloadfiles():
-        system("curl -O https://raw.githubusercontent.com/cat-linux/beaverrecon/master/BeaverRecon.py")
-        system("curl -O https://raw.githubusercontent.com/cat-linux/beaverrecon/master/requirements.txt")
+        system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/BeaverRecon.py --output BeaverRecon.py")
+        system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/requirements.txt --output requirements.txt")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/banners.py --output utils/banners.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/colors.py --output utils/colors.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/iputils.py --output utils/iputils.py")
-        system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/mainutils.py--output utils/mainutils.py")
+        system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/mainutils.py --output utils/mainutils.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/phoneutils.py --output utils/phoneutils.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/settings.py --output utils/settings.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/utils/settings.txt --output utils/settings.txt")
