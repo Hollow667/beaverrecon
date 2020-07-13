@@ -13,3 +13,4 @@ Version: 0.7
 Added Reverse Phone Number Lookup
 Updated UI
 Bug Fixes
+Update Check In Settings
