@@ -6,24 +6,19 @@ Current Version: 0.7
 ## Installing
 The tool runs on windows and linux 
 
-```git clone https://github.com/Cat-Linux/BeaverRecon.git```
-
-## Requirements and Prerequisites
 ### Linux
 ```
-sudo apt install python3 python3-pip
-pip3 install requests bs4 emailrep phonenumbers
+git clone https://github.com/Cat-Linux/BeaverRecon.git
+cd BeaverRecon
+chmod +x install.sh && ./install.sh
+python3 BeaverRecon.py
 ```
 
 ### Windows
 ```
 
+```
 
-## Running
-```
-python3 BeaverRecon.py
-```
-pretty self explanatory 
 
 ## About
 This tool is unfinished so expect there to be common errors lol
