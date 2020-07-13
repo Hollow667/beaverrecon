@@ -61,7 +61,7 @@ def banner(themec, version):
  Made By {reset}catlinux{themec} with love <3
 {reset}
  ____________________
-| {themec}Version{reset}: {version}       |
+| {themec}Version{reset}: {version}     |
 |____________________|
 | {themec}1{reset} | {themec}IP{reset}             |
 | {themec}2{reset} | {themec}Username{reset}       |
