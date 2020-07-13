@@ -14,7 +14,7 @@ def reversephone(phonenumber):
                 name = x.split('<div id="cnam">', 1)[-1].split(phonenumber[2], 1)[0].rstrip().lstrip()
                 finalinfo.append(f"Name: {name}")
 
-        url = f"https://api.telnyx.com/v1/phone_number/13236463343"
+        url = f"https://api.telnyx.com/v1/phone_number/1{phonenumber}"
         r = requests.get(url)
         data = r.json()
         carrier = data['carrier']['name']
