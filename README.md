@@ -29,6 +29,7 @@ set path="C:\Program Files\WinRAR\";%path%
 winrar x beaverrecon-master.zip
 cd beaverrecon-master
 python -m pip install -r requirements.txt --user
+python BeaverRecon.py
 ```
 
 
