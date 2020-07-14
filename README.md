@@ -1,5 +1,6 @@
 # BeaverRecon
 The tool is finally decently stable if theres any errors please open a issue
+
 Current Version: 0.7.1
 
 ## Installing
