@@ -49,30 +49,23 @@ def igpartialemail(username):
 def scylla(typelookup, query):
     finalinfo = []
     try:
-        headers = {'Accept': 'application/json'}
-        url = f"https://scylla.sh/search?q={typelookup}:{query}"
+        headers = {'Accept': 'application/json', 'Authorization': 'Basic c2FtbXk6QmFzaWNQYXNzd29yZCE='}
+        url = f'https://scylla.sh/search?q={typelookup}:"{query}"'
         r = requests.get(url, verify=False, headers=headers)
         if r.status_code != 200:
             finalinfo.append("scylla.sh is down :(\n")
             return finalinfo
         jsn = r.json()
-        for key in jsn:
-            for x in key:
-                if x == "_source":
-                    info = key[x]
-                    for i in list(info)[-1].split("\n"):
-                        info[i] = f"{info[i]}\n"
-
-                    if info[typelookup] != query:
-                        pass
-                    else:
-                        for z in info:
-                            finalinfo.append(f"{themecolor}{z}{reset}: {info[z]}")
-
+        for line in jsn:
+            source = line['_source']
+            for i in list(source)[-1].split("\n"):
+                source[i] = f"{source[i]}\n"
+            for x in source:
+                finalinfo.append(f"{themecolor}{str(x)}{reset}: {str(source[x])}")
+        return finalinfo
         if bool(finalinfo) == False:
             finalinfo.append("No Results Found :(\n")
-        return finalinfo
-
+            return finalinfo
     except Exception as e:
         finalinfo.append("Lookup Failed!")
         finalinfo.append(f"Error: {str(e)}\n")
