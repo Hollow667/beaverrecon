@@ -17,3 +17,7 @@ Update Check In Settings
 
 Version: 0.7.1
 removed broken colors from color menu
+
+Version: 0.7.2
+Optimized scylla lookup
+updated version checker
