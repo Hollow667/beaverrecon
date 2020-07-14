@@ -1,5 +1,6 @@
 from utils.colors import *
 from utils.settings import *
+from utils.update import *
 
 def ipmenu(themec, target):
     print(f'''{reset}
@@ -58,8 +59,9 @@ def banner(themec, version):
 |      <|  -__|  __|  _  |     |
 |___|__||_____|____|_____|__|__|
 
- Made By {reset}catlinux{themec} with love <3
-{reset}
+ Made By {reset}catlinux{themec} with love <3{reset}
+
+ {themec}{checkversion(version)}{reset}
  ____________________
 | {themec}Version{reset}: {version}     |
 |____________________|
