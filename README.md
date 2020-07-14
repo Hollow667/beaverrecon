@@ -49,3 +49,5 @@ BeaverRecon is OSINT/doxing tool that scrapes sites for information
 - ✅ - http://hashes.org/
 - ✅ - http://haveibeenpwned.com/
 - ✅ - https://pwndb2am4tzkvold.onion.ws
+- ✅ - http://validnumber.com
+- ✅ - http://telnyx.com
