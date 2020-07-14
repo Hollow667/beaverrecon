@@ -2,6 +2,9 @@ import platform
 import requests
 from os import system
 
+reset = "\033[0m"
+bold = "\033[01m"
+
 def downloadfiles():
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/BeaverRecon.py --output BeaverRecon.py")
         system("curl https://raw.githubusercontent.com/cat-linux/beaverrecon/master/requirements.txt --output requirements.txt")
@@ -19,7 +22,7 @@ def checkversion(VERSION):
     r = requests.get(url)
     check = r.text
     if VERSION != check:
-        info = f"New Update Available!: {str(check)}"
+        info = f"New Update Available!{reset}: {bold}{str(check)}{reset}"
         return info
     else:
         info = "You Are Up To Date."
