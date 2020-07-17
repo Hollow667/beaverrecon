@@ -11,7 +11,7 @@ from random import choice
 import sys
 
 ## Version
-VERSION = "0.7.2"
+VERSION = "0.7.3"
 
 def cls():
     if sys.platform == 'win32':
@@ -37,7 +37,7 @@ def mainloop(themec):
             else:
                 cls()
                 continue
-            
+
             if option == "1":
                 target = []
                 try:
