@@ -21,3 +21,9 @@ removed broken colors from color menu
 Version: 0.7.2
 Optimized scylla lookup
 updated version checker
+
+Version: 0.7.3
+UI Update
+
+Version: 0.7.4
+UI Fix and bug fixes
