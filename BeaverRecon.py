@@ -161,6 +161,7 @@ def mainloop(themec):
                     cls()
                     print("Please Enter A Email...")
                     sleep(2)
+                    continue
                 target.append(email)
                 while True:
                     cls()
