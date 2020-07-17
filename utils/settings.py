@@ -70,21 +70,3 @@ def colortocode(color):
     else:
         bannercolor = bold + blue
     return bannercolor
-
-
-def colormenu():
-    print(f'''
- __________________________
-|    color selection       |
-|__________________________|
-| {black}black{reset}      | {darkgrey}darkgrey{reset}    |
-| {red}red{reset}        | {lightred}lightred{reset}    |
-| {green}green{reset}      | {lightgreen}lightgreen{reset}  |
-| {orange}orange{reset}     | {yellow}yellow{reset}      |
-| {blue}blue{reset}       | {lightblue}lightblue{reset}   |
-| {purple}purple{reset}     | {pink}pink{reset}        |
-| {cyan}cyan{reset}       |  {lightcyan}lightcyan{reset}  |
-| {lightgrey}lightgrey{reset}  |_____________|
-|____________|
-''')
-
