@@ -11,7 +11,7 @@ from random import choice
 import sys
 
 ## Version
-VERSION = "0.7.3"
+VERSION = "0.7.4"
 
 def cls():
     if sys.platform == 'win32':
