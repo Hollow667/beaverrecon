@@ -34,6 +34,7 @@ python BeaverRecon.py
 
 ## About
 This tool is unfinished so expect there to be common errors lol
+
 BeaverRecon is a person OSINT tool that scrapes sites for information
 
 ### Tools
