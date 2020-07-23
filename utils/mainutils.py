@@ -288,10 +288,10 @@ def thatsthem(lookuptype, query):
                         finalinfo.append(f"{themecolor}Name{reset}: {filterhtml(line)}")
 
                     if 'address' in key and '<span itemprop="address"' in line:
-                        street = line.split('streetAddress">', 1)[-1].split('</span>', 1)[0]
-                        city = line.split('addressLocality">', 1)[-1].split('</span>', 1)[0]
-                        state = line.split('addressRegion">', 1)[-1].split('</span>', 1)[0]
-                        postal = line.split('postalCode">', 1)[-1].split('</span>', 1)[0]
+                        street = filterhtml(ine.split('streetAddress">', 1)[-1].split('</span>', 1)[0])
+                        city = filterhtml(line.split('addressLocality">', 1)[-1].split('</span>', 1)[0])
+                        state = filterhtml(line.split('addressRegion">', 1)[-1].split('</span>', 1)[0])
+                        postal = filterhtml(line.split('postalCode">', 1)[-1].split('</span>', 1)[0])
                         address = f'{street}, {city}, {state}, {postal}'
                         
                         finalinfo.append(f"{themecolor}Address{reset}: {address}")
