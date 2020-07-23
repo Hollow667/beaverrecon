@@ -1,4 +1,5 @@
 from utils.colors import *
+import requests
 
 def getapikey(setting):
     readst = open("utils//settings.txt", 'r').readlines()
@@ -70,3 +71,13 @@ def colortocode(color):
     else:
         bannercolor = bold + blue
     return bannercolor
+
+themecolor = colortocode(getcolor())
+
+def checkchangelog():
+    r = requests.get("https://pastebin.com/raw/AYyfKcHW")
+    for line in r.text.split("\n"):
+        if "Version: " in line:
+            info = line.split(": ")
+            line = f"{themecolor}{info[0]}{reset}: {bold}{info[1]}"
+        print(line)
