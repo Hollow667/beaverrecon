@@ -56,6 +56,7 @@ def settingsmenu(themec):
 │ {themec}1{reset} │ {themec}Color Menu{reset}       │
 │ {themec}2{reset} │ {themec}Update Api Keys{reset}  │
 │ {themec}3{reset} │ {themec}Check For Update{reset} │
+│ {themec}4{reset} │ {themec}Change Log{reset}       │
 │ {themec}0{reset} │ {themec}Go Back{reset}          │
 ╰───┴──────────────────╯
     ''')
