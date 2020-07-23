@@ -27,3 +27,7 @@ UI Update
 
 Version: 0.7.4
 UI Fix and bug fixes
+
+Version: 0.7.5
+Finally updated the thatsthem function 
+You can now lookup names and addresses
