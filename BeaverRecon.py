@@ -11,7 +11,7 @@ from random import choice
 import sys
 
 ## Version
-VERSION = "0.7.6"
+VERSION = "0.7.7"
 
 def cls():
     if sys.platform == 'win32':
@@ -396,6 +396,12 @@ def mainloop(themec):
                             else:
                                 continue
                         sleep(2)
+
+                    elif option == "4":
+                        cls()
+                        checkchangelog()
+                        input(f"{reset}{bold}press enter to go back:{themec} ")
+                        continue
 
                     elif option == "0":
                         break
