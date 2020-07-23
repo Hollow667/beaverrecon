@@ -9,6 +9,16 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 themecolor = colortocode(getcolor())
 
+
+def filterhtml(html):
+    finaloutput = ''
+    soup = BeautifulSoup(html, 'html.parser')
+    text = soup.find_all(text=True)
+    for line in text:
+        line = line.rstrip().lstrip()
+        finaloutput += line
+    return finaloutput
+
 def igpartialemail(username):
 
     url = "https://instagram.com/accounts/account_recovery_send_ajax/"
@@ -62,10 +72,10 @@ def scylla(typelookup, query):
                 source[i] = f"{source[i]}\n"
             for x in source:
                 finalinfo.append(f"{themecolor}{str(x)}{reset}: {str(source[x])}")
-        return finalinfo
         if bool(finalinfo) == False:
             finalinfo.append("No Results Found :(\n")
             return finalinfo
+        return finalinfo
     except Exception as e:
         finalinfo.append("Lookup Failed!")
         finalinfo.append(f"Error: {str(e)}\n")
@@ -228,4 +238,75 @@ def pwndb2(email):
     except Exception as e:
         finalinfo.append("Lookup Failed!")
         finalinfo.append(f"Error: {str(e)}\n")
+        return finalinfo
+
+def thatsthem(lookuptype, query):
+    finalinfo = []
+    try:
+        lookups = ['name', 'phone','address','email','ip', 'Last Updated']
+        if lookuptype == "name":
+            lookups.remove(lookuptype)
+            query = query.split(" ")
+            fname = query[0]
+            lname = query[1]
+            zipcode = query[2]
+            url = f"https://thatsthem.com/name/{fname}-{lname}/{zipcode}"
+
+        elif lookuptype == "phone":
+            lookups.remove(lookuptype)
+            url = f"https://thatsthem.com/phone/{query[0:3]}-{query[3:6]}-{query[6:10]}"
+        
+        elif lookuptype == "address":
+            lookups.remove(lookuptype)
+            query = query.replace(" ", "-")
+            url = f"https://thatsthem.com/address/{query}"
+        
+        elif lookuptype == "email":
+            lookups.remove(lookuptype)
+            url = f"https://thatsthem.com/email/{query}"
+        
+        elif lookuptype == "ip":
+            lookups.remove(lookuptype)
+            url = f"https://thatsthem.com/ip/{query}"
+        
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"}
+        r = requests.get(url, headers=headers)
+        soup = BeautifulSoup(r.text, 'html.parser')
+        records = soup.findAll("div", attrs={"class" : "ThatsThem-record"})
+
+        for line in str(records).split("\n"):
+            for key in lookups:
+                if key in line:
+                    if 'email' in key and 'itemprop="email"' in line:
+                        finalinfo.append(f"{themecolor}Email{reset}: {filterhtml(line)}")
+
+                    if 'ip' in key and 'href="/ip/' in line:
+                        ip = line.split('"/ip/', 1)[-1].replace('">', '')
+                        finalinfo.append(f"{themecolor}IP{reset}: {ip}")
+
+                    if 'name' in key and '<span itemprop="name"' in line:
+                        finalinfo.append(f"{themecolor}Name{reset}: {filterhtml(line)}")
+
+                    if 'address' in key and '<span itemprop="address"' in line:
+                        street = line.split('streetAddress">', 1)[-1].split('</span>', 1)[0]
+                        city = line.split('addressLocality">', 1)[-1].split('</span>', 1)[0]
+                        state = line.split('addressRegion">', 1)[-1].split('</span>', 1)[0]
+                        postal = line.split('postalCode">', 1)[-1].split('</span>', 1)[0]
+                        address = f'{street}, {city}, {state}, {postal}'
+                        
+                        finalinfo.append(f"{themecolor}Address{reset}: {address}")
+
+                    if 'phone' in key and '"telephone">' in line:
+                        finalinfo.append(f"{themecolor}Phone{reset}: {filterhtml(line)}")
+
+                    if 'Last Updated' in line and key:
+                        date = filterhtml(line).split(": ")[1]
+                        finalinfo.append(f"{themecolor}Last Updated{reset}: {date}\n")
+        
+        if bool(finalinfo) == False:
+            finalinfo.append("No Results Found :(\n")
+        return finalinfo
+        
+    except Exception as e:
+        finalinfo.append(f"Error: {e}\n")
         return finalinfo
