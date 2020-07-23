@@ -24,6 +24,17 @@ def usernamemenu(themec, target):
 ╰───┴───────────────╯
     ''')
 
+def phonemenu(themec, target):
+    print(f'''{reset}
+ {bold}Current Target: {themec}{target}{reset}
+╭───┬───────────────┬────────────────────────────────────────────────────╮
+│ {themec}1{reset} │ {bold}ThatsThem{reset}     │ {themec}Information Lookup{reset}                                 │
+│ {themec}2{reset} │ {bold}Phone Scrape{reset}  │ {themec}Scrapes Multiple Sites For Information{reset}             │
+│ {themec}3{reset} │ {bold}change target{reset} │ {themec}Change Current Target{reset}                              │
+│ {themec}0{reset} │ {bold}Go Back{reset}       ├────────────────────────────────────────────────────╯
+╰───┴───────────────╯
+    ''')
+
 def emailmenu(themec, target):
     print(f'''{reset}
  {bold}Current Target: {themec}{target}{reset}
@@ -32,7 +43,8 @@ def emailmenu(themec, target):
 │ {themec}2{reset} │ {bold}Scylla{reset}        │ {themec}Data Breach Lookup(shows leaked info){reset} │
 │ {themec}3{reset} │ {bold}Pwndb2{reset}        │ {themec}Data Breach Lookup(shows leaked info){reset} │
 │ {themec}4{reset} │ {bold}HIBP{reset}          │ {themec}Data Breach Lookup(only shows leaks){reset}  │
-│ {themec}5{reset} │ {bold}Change Target{reset} │ {themec}Change Current Target{reset}                 │
+│ {themec}5{reset} │ {bold}ThatsThem{reset}     │ {themec}Information Lookup                  {reset}  │
+│ {themec}6{reset} │ {bold}Change Target{reset} │ {themec}Change Current Target{reset}                 │
 │ {themec}0{reset} │ {bold}Go Back{reset}       ├───────────────────────────────────────╯
 ╰───┴───────────────╯
     ''')
@@ -56,13 +68,15 @@ def banner(themec, version):
     ╭────────────────────╮
     │       {reset}Options      │ 
     ├───┬────────────────┤
-    │ {themec}1{reset} │ {themec}IP{reset}             │
-    │ {themec}2{reset} │ {themec}Username{reset}       │
-    │ {themec}3{reset} │ {themec}Email{reset}          │
-    │ {themec}4{reset} │ {themec}Phone{reset}          │
-    │ {themec}5{reset} │ {themec}Hash Decrypt{reset}   │
-    │ {themec}6{reset} │ {themec}Info{reset}           │
-    │ {themec}7{reset} │ {themec}Settings{reset}       │
+    │ {themec}1{reset} │ {themec}Name{reset}           │
+    │ {themec}2{reset} │ {themec}Address{reset}        │
+    │ {themec}3{reset} │ {themec}IP{reset}             │
+    │ {themec}4{reset} │ {themec}Username{reset}       │
+    │ {themec}5{reset} │ {themec}Email{reset}          │
+    │ {themec}6{reset} │ {themec}Phone{reset}          │
+    │ {themec}7{reset} │ {themec}Hash Decrypt{reset}   │
+    │ {themec}8{reset} │ {themec}Info{reset}           │
+    │ {themec}9{reset} │ {themec}Settings{reset}       │
     │ {themec}0{reset} │ {themec}Exit{reset}           │
     ╰───┴────────────────╯''' + reset)
 
