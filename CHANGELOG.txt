@@ -31,3 +31,6 @@ UI Fix and bug fixes
 Version: 0.7.5
 Finally updated the thatsthem function 
 You can now lookup names and addresses
+
+Version: 0.7.6
+ThatsThem Parsing Bug Fix
