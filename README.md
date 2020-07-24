@@ -48,7 +48,7 @@ BeaverRecon is a person OSINT tool that scrapes sites for information
 - ✅ - https://thatsthem.com/
 - ✅ - http://scylla.sh/
 - ✅ - https://emailrep.io/
-- ✅ - http://hashes.org/
+- ❌ - http://hashes.org/
 - ✅ - http://haveibeenpwned.com/
 - ✅ - https://pwndb2am4tzkvold.onion.ws
 - ✅ - http://validnumber.com
