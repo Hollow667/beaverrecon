@@ -7,10 +7,31 @@ Current Version: 0.7.8
 The tool runs on windows and linux 
 
 ### Linux (Debian Based Distros)
+
+#### Debian Based
 ```
 git clone https://github.com/Cat-Linux/BeaverRecon.git
 cd BeaverRecon
 chmod +x install.sh && ./install.sh
+python3 BeaverRecon.py
+```
+
+#### Redhat Based
+```
+sudo yum update -y && yum upgrade -y
+sudo yum install git curl python3 python3-pip -y
+git clone https://github.com/Cat-Linux/BeaverRecon.git
+cd BeaverRecon
+python3 -m pip install -r requirements.txt
+python3 BeaverRecon.py
+```
+#### Termux
+```
+pkg update  && pkg upgrade
+pkg install git curl python
+git clone https://github.com/Cat-Linux/BeaverRecon.git
+cd BeaverRecon
+pip install -r requirements.txt
 python3 BeaverRecon.py
 ```
 
