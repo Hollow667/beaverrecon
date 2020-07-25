@@ -14,7 +14,7 @@ chmod +x install.sh && ./install.sh
 python3 BeaverRecon.py
 ```
 
-### Windows
+### Windows 10
 PS: you need winrar installed for this other wise you can just do this manually
 
 Download the latest python version from here: https://www.python.org/
