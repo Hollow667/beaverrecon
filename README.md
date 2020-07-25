@@ -6,7 +6,7 @@ Current Version: 0.7.8
 ## Installing
 The tool runs on windows and linux 
 
-### Linux (Debian Based Distros)
+### Linux
 
 #### Debian Based
 ```
