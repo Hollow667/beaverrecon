@@ -164,12 +164,18 @@ def mainloop(themec):
 
                     elif option == "2":
                         cls()
+                        print (f"{reset}{green}{icon}{reset} {blue} Username Checker {green}{icon}{reset}")
+                        usernamechecker(currenttarget)
+                        input(f"\n{reset}{bold}press enter to go back:{reset}{themec} ")
+                        continue
+                    elif option == "3":
+                        cls()
                         print (f"{reset}{green}{icon}{reset} {blue} Instagram Lookup {green}{icon}{reset}")
                         print(igpartialemail(currenttarget))
                         input(f"\n{reset}{bold}press enter to go back:{reset}{themec} ")
                         continue
 
-                    elif option == "3":
+                    elif option == "4":
                         cls()
                         changetarget = input(f"{reset}{bold}Target:{reset}{themec} ")
                         target.clear()
