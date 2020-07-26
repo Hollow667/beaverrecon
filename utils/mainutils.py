@@ -9,7 +9,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 themecolor = colortocode(getcolor())
 
-
 def filterhtml(html):
     finaloutput = ''
     soup = BeautifulSoup(html, 'html.parser')
@@ -310,3 +309,24 @@ def thatsthem(lookuptype, query):
     except Exception as e:
         finalinfo.append(f"Error: {e}\n")
         return finalinfo
+
+def usernamechecker(username):
+    finalinfo = []
+    try:
+        url = "http://namecheck.umeridrisi.com/existence.php"
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        for x in range(52): # 51 sites checked
+            data = f"index={x}&username={username}"
+            r = requests.post(url, data=data, headers=headers)
+            jsondata = r.json()
+            for key in jsondata:
+                if key == "message":
+                    if jsondata[key] == "exists":
+                        sitefound = jsondata['url'].replace(username, f"{bold}{themecolor}{username}{reset}")
+                        finalinfo.append(f"{sitefound}")
+                        print(sitefound)
+        if bool(finalinfo) == "False":
+            print("Username not found on any sites :(")
+        
+    except Exception as e:
+        print(f"\nError: {str(e)}")
