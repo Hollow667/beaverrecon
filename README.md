@@ -1,7 +1,7 @@
 # BeaverRecon
 The tool is finally decently stable if theres any errors please open a issue
 
-Current Version: 0.7.8
+Current Version: 0.8.0
 
 ## Installing
 The tool runs on windows and linux 
