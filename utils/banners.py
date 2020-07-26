@@ -16,12 +16,13 @@ def ipmenu(themec, target):
 def usernamemenu(themec, target):
     print(f'''{reset}
  {bold}Current Target: {themec}{target}{reset}
-╭───┬───────────────┬────────────────────────────────────────────────────╮
-│ {themec}1{reset} │ {bold}scylla{reset}        │ {themec}Data Breach Lookup(Shows Leaked Info){reset}              │
-│ {themec}2{reset} │ {bold}instagram{reset}     │ {themec}Get The Partial Email or Phone On A Instagram User{reset} │
-│ {themec}3{reset} │ {bold}change target{reset} │ {themec}Change Current Target{reset}                              │
-│ {themec}0{reset} │ {bold}Go Back{reset}       ├────────────────────────────────────────────────────╯
-╰───┴───────────────╯
+╭───┬──────────────────┬────────────────────────────────────────────────────╮
+│ {themec}1{reset} │ {bold}scylla{reset}           │ {themec}Data Breach Lookup(Shows Leaked Info){reset}              │
+│ {themec}2{reset} │ {bold}Username Checker{reset} │ {themec}Checks 52 Websites For Username{reset}                    │
+│ {themec}3{reset} │ {bold}instagram{reset}        │ {themec}Get The Partial Email or Phone On A Instagram User{reset} │
+│ {themec}4{reset} │ {bold}change target{reset}    │ {themec}Change Current Target{reset}                              │
+│ {themec}0{reset} │ {bold}Go Back{reset}          ├────────────────────────────────────────────────────╯
+╰───┴──────────────────╯
     ''')
 
 def phonemenu(themec, target):
