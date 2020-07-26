@@ -39,5 +39,8 @@ Version: 0.7.7
 Added option in settings to view changelog
 
 Version: 0.7.8
+Fixed typo which broke thatsthem function lmao
+
+Version: 0.7.9
 Added Username checker
 minor bug fixes
