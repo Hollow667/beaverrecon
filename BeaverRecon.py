@@ -27,7 +27,7 @@ def mainloop(themec):
             if reload == True:
                 break
 
-            icons = ['ツ', '卐', '✦', '☣']
+            icons = ['ツ', '✦', '☣']
             icon = choice(icons)
             cls()
             print(banner(themec, VERSION))
