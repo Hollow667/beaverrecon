@@ -32,7 +32,7 @@ pkg install git curl python
 git clone https://github.com/Cat-Linux/BeaverRecon.git
 cd BeaverRecon
 pip install -r requirements.txt
-python3 BeaverRecon.py
+python BeaverRecon.py
 ```
 
 ### Windows 10
